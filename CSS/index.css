@@ -109,6 +109,7 @@ body {
     }
 
     ul {
+        padding: 0px;
         width: 100%;
     }
 
@@ -126,7 +127,6 @@ body {
 
         padding-left: 2.5%;
         padding-right: 2.5%;
-        right: 11.5%;
 
         object-fit: contain;
     }
