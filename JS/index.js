@@ -3,15 +3,19 @@ console.log(window.innerWidth)
 var containerEm = window.innerWidth/80;
 var imageEm = window.innerWidth/60;
 var itemPrefix = "translateY(";
-var itemSuffix = ") translateX(150%)";
-var paraTransform = window.innerWidth/108;
+var itemSuffix = ") translateX(120%)";
+var paraTransform = window.innerWidth/80;
 
 var containerItems = document.getElementsByClassName("contentContainer");
 var containerImages = document.getElementsByClassName("containerImage");
 var containerParagraphs = document.getElementsByClassName("containerParagraph");
 
-console.log(containerItems.length);
-console.log(containerEm); 
+// a list used to designate pies in the cart while on the home page
+// and the order list.
+var pieList = []
+
+// console.log(containerItems.length);
+// console.log(containerEm); 
 
 if (window.innerWidth > 480) {
     console.log("Window size requirements met for resizing");
@@ -27,7 +31,7 @@ function resizeElements() {
     var imageEm = window.innerWidth/60;
 
     if (imageEm != lastEm || window.innerWidth > 480) {
-        var paraTransform = window.innerWidth/108;
+        var paraTransform = window.innerWidth/80;
         var containerEm = window.innerWidth/80;
 
         for (let i = 0; i < containerItems.length; i++) {
@@ -41,8 +45,8 @@ function resizeElements() {
     //console.log(lastEm, "<- lastEm");
 }
 
-console.log(containerItems[0].style.height);
-console.log(containerParagraphs.length);
-console.log(containerParagraphs[0].style.transform);
+// console.log(containerItems[0].style.height);
+// console.log(containerParagraphs.length);
+// console.log(containerParagraphs[0].style.transform);
 
 setInterval(resizeElements, 1000);

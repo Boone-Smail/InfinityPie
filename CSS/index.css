@@ -1,12 +1,32 @@
+#orderButton {
+    position: fixed;
+    color: white;
+    background-color: rgb(25, 50, 100);
+    bottom: 2%;
+    right: 2%;
+    z-index: 5;
+    font-size: 3em;
+    border-radius: 20px;
+    padding:1%;
+    text-decoration: none;
+    border: 1px solid rgb(175, 150, 75);
+}
+
 html, body {
     padding: 0%;
     margin: 0%;
+    overflow-x: hidden;
+}
+
+html {
+    background-color: rgb(175, 150, 75);
 }
 
 body {
     background-color: rgb(75,100,175);
-    width: 100%;
+    width: 98%;
     height:100%;
+    margin: auto;
 }
 
 #mainTitle {
@@ -17,6 +37,8 @@ body {
 }
 
 #mainImage{
+    display: block;
+    margin: auto;
     width: 100%;
     object-fit: contain;
     object-position: top;
@@ -24,6 +46,7 @@ body {
 
 #mainImageContainer {
     height:15em;
+    background-color: rgb(175, 150, 75);
 }
 
 .imageContainer {
@@ -62,6 +85,7 @@ body {
         outline: 1px solid white;
         display: block;
         resize: none;
+        overflow: hidden;
     }
 
     .imageContainer {
@@ -75,15 +99,19 @@ body {
         overflow: hidden;
         background: linear-gradient(to right, white, black);
         mix-blend-mode: normal;
+        transform: translateY(-12%);
+        z-index: 2;
     }
 
     ul li div p {
         position: absolute;
-        width: 35%;
-        text-align: justify;
-        z-index: -3;
+        width: 40%;
+        text-align: right;
+        z-index: 0;
         color: white;
         font-size: 140%;
+        /* transform: translateX(120%) translateY(-300%); */
+        opacity: 0%;
     }
 
     ul li:hover .imageContainer{
@@ -91,9 +119,18 @@ body {
         width: 50%;
     }
 
+    ul li div:hover p {
+        transition: all 0.5s;
+        opacity: 100%;
+    }
+
 }
 
 @media screen and (max-width: 480px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    
     #mainImageContainer {
         width: 100%;
         height: 35%;

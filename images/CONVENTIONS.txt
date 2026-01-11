@@ -1,0 +1,1 @@
+- all pie images are to be 1:1 in ratio (traditionally 3024:3024px), and originals are to be logged in og's
