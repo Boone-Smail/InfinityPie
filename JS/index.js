@@ -1,18 +1,16 @@
 console.log(window.innerWidth)
 
-var containerEm = window.innerWidth/80;
+var containerEm = window.innerWidth/70;
 var imageEm = window.innerWidth/60;
 var itemPrefix = "translateY(";
 var itemSuffix = ") translateX(120%)";
-var paraTransform = window.innerWidth/80;
+var paraTransform = window.innerWidth/85;
+var addButtonTransform = window.innerWidth/3.637
 
 var containerItems = document.getElementsByClassName("contentContainer");
 var containerImages = document.getElementsByClassName("containerImage");
 var containerParagraphs = document.getElementsByClassName("containerParagraph");
-
-// a list used to designate pies in the cart while on the home page
-// and the order list.
-var pieList = []
+var addButtons = document.getElementsByClassName("addButton");
 
 // console.log(containerItems.length);
 // console.log(containerEm); 
@@ -23,6 +21,7 @@ if (window.innerWidth > 480) {
         containerItems[i].style.height = String(containerEm) + "em";
         containerImages[i].style.width = String(imageEm) + "em";
         containerParagraphs[i].style.transform = itemPrefix + String(-paraTransform) + "em" + itemSuffix;
+        addButtons[i].style.transform = itemPrefix + String(-addButtonTransform) + "%" + ") translateX(120%)";
     }
 }
 
@@ -31,13 +30,15 @@ function resizeElements() {
     var imageEm = window.innerWidth/60;
 
     if (imageEm != lastEm || window.innerWidth > 480) {
-        var paraTransform = window.innerWidth/80;
-        var containerEm = window.innerWidth/80;
+        var paraTransform = window.innerWidth/85;
+        var containerEm = window.innerWidth/70;
+        var addButtonTransform = window.innerWidth/3.637;
 
         for (let i = 0; i < containerItems.length; i++) {
         containerItems[i].style.height = String(containerEm) + "em";
         containerImages[i].style.width = String(imageEm) + "em";
         containerParagraphs[i].style.transform = itemPrefix + String(-paraTransform) + "em" + itemSuffix;
+        addButtons[i].style.transform = itemPrefix + String(-addButtonTransform) + "%" + ") translateX(120%)";
         }
 
         lastEm = imageEm;
@@ -49,4 +50,42 @@ function resizeElements() {
 // console.log(containerParagraphs.length);
 // console.log(containerParagraphs[0].style.transform);
 
+console.log(window.innerWidth);
+
 setInterval(resizeElements, 1000);
+
+
+
+// add buttons
+
+// a list used to designate pies in the cart while on the home page
+// and the order list.
+var pieList = []
+
+var yourCartElem = document.getElementById("orderButton");
+
+
+function addToCart(name) {
+    pieList.push(name);
+    
+    //debug
+    console.log("Pie list:")
+    for (var i = 0; i < pieList.length; i++) {
+        console.log("\t", pieList[i])
+    }
+
+    yourCartElem.textContent = "Your cart (" + String(pieList.length) + ")";
+
+    return true;
+}
+
+
+var pieNames = document.getElementsByClassName("pieName");
+console.log("Pie name count =>", pieNames.length)
+for (let i = 0; i < addButtons.length; i++) {
+    let text = pieNames[i].textContent;
+    console.log(i, ":", text)
+    addButtons[i].addEventListener("click", function(){addToCart(text.toString())});
+}
+
+console.log("Add button count => ", addButtons.length)
