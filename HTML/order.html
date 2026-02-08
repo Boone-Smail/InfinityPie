@@ -2,10 +2,32 @@
 <html>
     <head>
         <title>Your Pie Cart</title>
-        <link href="CSS/index.css" rel="stylesheet"/>
+        <link href="../CSS/index.css" rel="stylesheet"/>
+        <link href="../CSS/myCart.css" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        
+        <h1>Your Order:</h1>
+        <ul id="orderRegion">
+
+        </ul>
+        <i id="expectedTotal">Expected total: $0.00</i>
+        <form id="orderForm">
+            <div>
+                <label for="custName">Name:</label>
+                <input type="text" id="custName">
+            </div>
+            <div>
+                <label for="custNumber">Phone Number:</label>
+                <input type="text" id="custNumber">
+            </div>
+            <p id="confirmOrder">Send Order ✉️</p>
+        </form>
+        <footer id="disclaimer">
+            <p>*To place your order, you will have to send an email! The message will be drafted for you automatically, you just have to hit send!</p>
+            <p>Alternatively, call (406)366-2857</p>
+            <p><i>All transactions expected to be completed with CASH upon pickup. No one affiliated with InfinityPie would EVER ask for your card information</i></p>
+        </footer>
+        <script src="../JS/mycart.js"></script>
     </body>
 </html>

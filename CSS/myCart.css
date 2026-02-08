@@ -1,0 +1,125 @@
+h1 {
+    color: white;
+    text-decoration: underline;
+    text-indent: 7.5%;
+    margin-top: 5%;
+}
+
+.itemDestroy {
+    width: 4%;
+    float: right;
+    transform: translateY(40%) translateX(-20%);
+}
+
+#expectedTotal {
+    color: white;
+    font-size: 1.2em;
+    padding-left: 20%;
+}
+
+form div {
+    width: 100%;
+    text-align: right;
+    color: white;
+    transform: translateX(-10%);
+}
+
+#confirmOrder {
+    user-select: none;
+    background-color: rgb(60, 50, 25);
+    width: 25%;
+    text-align: center;
+    color: rgb(175, 150, 75);
+    font-size: 2em;
+    float: right;
+    margin-right: 5%;
+    border: 1px solid rgb(175, 150, 75);
+}
+
+#confirmOrder:hover {
+    transition: all 0.3s;
+    background-color: rgb(175, 150, 75);
+    color:rgb(60, 50, 25);
+}
+
+#disclaimer {
+    /* position: absolute; */
+    bottom: 0px;
+    margin-right: 25%;
+    width: 100%;
+    float: left;
+    text-indent: 10%;
+    color: rgb(100, 200, 255);
+    white-space: pre-line;
+}
+
+@media screen and (min-width: 481px) {
+
+    #orderRegion {
+        width: 95%;
+        margin: auto;
+        background-color: rgb(25, 50, 100);
+    }
+
+    .orderItem {
+        margin: 0px;
+        width: 95%;
+        display: block;
+        padding: 0%;
+        background-color: rgb(25, 50, 100);
+        border-bottom: 1px solid rgb(12, 25, 50);
+    }
+
+    .orderItem::after {
+        clear: both;
+    }
+
+    .orderImage{
+        display: block;
+        width: 7%;
+        float: left;
+        transform: none;
+    }
+
+    .orderDesc {
+        float: left;
+        display: block;
+        margin-bottom: 0%;
+        margin-top: 2.5%;
+        color: white;
+        text-indent: 1em;
+        font-size: 200%;
+    }
+
+}
+
+@media screen and (max-width:480px) {
+    
+    .orderItem {
+        display: block;
+        float: left;
+        width: 90%;
+        height: auto;
+        margin-left: 2.5%;
+        border-bottom: 1px solid rgb(12, 25, 50);
+        background-color: rgb(25, 50, 100);
+    }
+
+    .itemDestroy {
+        width: 10%;
+    }
+    
+    .orderImage {
+        float: left;
+        width: 20%;
+    }
+
+    .orderDesc {
+        float: left;
+        transform: translateY(120%) translateX(10px);
+    }
+    
+    #confirmOrder {
+        width: 60%;
+    }
+}

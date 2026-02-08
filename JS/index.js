@@ -50,7 +50,7 @@ function resizeElements() {
 // console.log(containerParagraphs.length);
 // console.log(containerParagraphs[0].style.transform);
 
-console.log(window.innerWidth);
+// console.log(window.innerWidth);
 
 setInterval(resizeElements, 1000);
 
@@ -69,23 +69,40 @@ function addToCart(name) {
     pieList.push(name);
     
     //debug
-    console.log("Pie list:")
-    for (var i = 0; i < pieList.length; i++) {
-        console.log("\t", pieList[i])
-    }
+    // console.log("Pie list:")
+    // for (var i = 0; i < pieList.length; i++) {
+    //     console.log("\t", pieList[i])
+    // }
 
     yourCartElem.textContent = "Your cart (" + String(pieList.length) + ")";
 
     return true;
 }
 
-
 var pieNames = document.getElementsByClassName("pieName");
-console.log("Pie name count =>", pieNames.length)
+// console.log("Pie name count =>", pieNames.length)
 for (let i = 0; i < addButtons.length; i++) {
     let text = pieNames[i].textContent;
-    console.log(i, ":", text)
+    // console.log(i, ":", text)
     addButtons[i].addEventListener("click", function(){addToCart(text.toString())});
 }
 
-console.log("Add button count => ", addButtons.length)
+// console.log("Add button count => ", addButtons.length)
+
+function viewCart() {
+    if (pieList.length <= 0) {
+        alert("Your cart is empty!");
+    }
+    else {
+        let temp = "";
+        for(var i = 0; i < pieList.length; i++) {
+            temp += pieList[i] + ";";
+        }
+        temp = temp.slice(0, -1);
+
+        sessionStorage.setItem("cart", temp);
+        window.location.href = "../HTML/order.html";
+    }
+}
+
+yourCartElem.addEventListener("click", viewCart);

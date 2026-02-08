@@ -20,11 +20,12 @@
 
 .addButton {
     transform: translateY(-500%) translateX(120%);
-    border: 1px solid rgb(175, 150, 75);
-    background-color: rgb(60, 50, 25);
+    border: 1px solid rgb(150, 150, 200);
+    background-color: rgb(50,50,100);
     color: rgb(175, 150, 75);
     text-align: center;
     border-radius: 10px;
+    user-select: none;
 }
 
 .addButton:hover {
@@ -40,7 +41,7 @@ html, body {
 }
 
 html {
-    background-color: rgb(175, 150, 75);
+    background-color: rgb(50,50,100);
 }
 
 body {
@@ -69,13 +70,33 @@ body {
 #mainImageContainer {
     height:15em;
     background-color: rgb(175, 150, 75);
+    box-shadow: 0px 10px rgb(50,50,100);
 }
 
 .imageContainer {
     overflow: hidden;
 }
 
+#disclaimer p {
+    margin: 0px;
+    width: 80%;
+    margin: auto;
+}
+
 @media screen and (min-width: 481px) {
+
+    .MOBILEpieName {
+        display:none;
+    }
+
+    .contentContainer {
+        background-color: rgb(25, 50, 100);
+    }
+
+    #CRCapplePie {
+        background-image: url("../images/CinnamonRollCrustApplePie_ALT_DARKENED.jpg");
+        background-size: 100%;
+    }
 
     ul {
     width: 90%;
@@ -149,6 +170,11 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+
+    .pieName {
+        display:none;
+    }
+
     html, body {
         overflow-x: hidden;
     }
@@ -178,6 +204,7 @@ body {
 
     ul li {
         width: 45%;
+        height: 325px;
         display: block;
         list-style: none;
         float: left;
@@ -190,9 +217,18 @@ body {
         object-fit: contain;
     }
 
+    .MOBILEpieName {
+        font-size: 1em;
+        background-color: rgb(25,50,100);
+    }
+
     ul li img {
         width: 100%;
         
+    }
+
+    .containerImage {
+        width: 100%; 
     }
 
     ul li h3 {
@@ -205,6 +241,10 @@ body {
         transform: none;
         margin: 0px;
         margin-bottom: 5%;
+    }
+
+    .addButton {
+        transform: none;
     }
 }
 
