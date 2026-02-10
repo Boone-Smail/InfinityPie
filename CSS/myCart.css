@@ -11,7 +11,7 @@ h1 {
     transform: translateY(40%) translateX(-20%);
 }
 
-#expectedTotal {
+#expectedTotalContainer {
     color: white;
     font-size: 1.2em;
     padding-left: 20%;
@@ -89,6 +89,10 @@ form div {
         color: white;
         text-indent: 1em;
         font-size: 200%;
+    }
+
+    #expectedTotalContainer {
+        font-size: 1.5em;
     }
 
 }

@@ -4,17 +4,45 @@ var emailPrepend = "mailto:19kathys63@gmail.com?subject=New%20Pie%20Order&body="
 // This variable acts as a filter for the final order email that
 // exlcudes which items will have the word "pie" appended to it
 var exlcudePie = ["Caramel Corn"];
-
-    // Variable used to determine what has been removed from cart
-    // before placing order. Acts as a list of items to filter from
-    // final order.
+// This map puts items with their respective prices.
+var priceMap = new Map();
+    priceMap.set("pie", 40.0);
+    priceMap.set("Caramel Corn", 20.0);
+    priceMap.set("cookie", 1.5);
+    priceMap.set("rolls", 35.0);
+// Cart variable is a list of all items
+var temp = sessionStorage.getItem("cart");
+var cart = temp.split(";");
+// Variable used to determine what has been removed from cart
+// before placing order. Acts as a list of items to filter from
+// final order.
 var removed = [];
+
+// Function for calculating the total cost of everything,
+// used to adjust price as items are removed or instantiated.
+var expectedTotalItem = document.getElementById("expectedTotal");
+function calculateCost() {
+    let price = 0.0
+    for (var i = 0; i < cart.length; i++) {
+        if (removed.indexOf(i) != -1) continue;
+
+        if (exlcudePie.indexOf(cart[i]) == -1) {
+            price += priceMap.get("pie");
+        }
+        else {
+            price += priceMap.get(cart[i]);
+        }
+    }
+    expectedTotalItem.innerHTML = "$" + price.toFixed(2);
+}
+
 // Function for removing item from cart
 function removeItem(idNum) {
     temp = document.getElementById("oi-" + String(idNum));
 
     temp.remove();
     removed.push(idNum);
+    calculateCost();
 }
 
 // Function called when end user hits "Send Order *mail_emoji" button
@@ -27,10 +55,10 @@ function sendOrder() {
         }
     }
 
-    console.log("Final order: ")
-    for (var i = 0; i < finalOrder.length; i++) {
-        console.log("\t" + finalOrder[i]);
-    }
+    // console.log("Final order: ")
+    // for (var i = 0; i < finalOrder.length; i++) {
+    //     console.log("\t" + finalOrder[i]);
+    // }
 
     let custName = document.getElementById("custName").value;
     let custNumber = document.getElementById("custNumber").value;
@@ -65,9 +93,6 @@ imgSources.set("Caramel Corn", "AlmondPecanCaramelCorn.jpg");
 
 var unIdCount = 0;
 
-var temp = sessionStorage.getItem("cart");
-var cart = temp.split(";");
-
 var orderParent = document.getElementById("orderRegion");
 for(var i = 0; i < cart.length; i++) {
     //console.log(cart[i]);
@@ -101,6 +126,7 @@ for(var i = 0; i < cart.length; i++) {
     orderItem.appendChild(orderDesc);
     orderItem.appendChild(itemDestroy);
     orderParent.appendChild(orderItem);
+    calculateCost();
 }
 
 let orderButtonItem = document.getElementById("confirmOrder");
