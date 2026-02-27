@@ -90,6 +90,9 @@ imgSources.set("Cinnamon Roll Crust Apple", "CinnamonRollCrustApplePie.jpg");
 imgSources.set("Peanut Butter", "PeanutButterPie.jpg");
 imgSources.set("Coconut Cream", "20251115_094852.jpg");
 imgSources.set("Caramel Corn", "AlmondPecanCaramelCorn.jpg");
+imgSources.set("Blueberry Cheesecake", "BlueberryCkeesecakePie.jpg");
+imgSources.set("Macadamia Crust Key Lime", "MacadamiaCrustKeyLime.jpg");
+imgSources.set("Pumpkin Cheesecake", "PumpkinCheesecakePie.jpg");
 
 var unIdCount = 0;
 

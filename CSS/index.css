@@ -83,6 +83,11 @@ body {
     margin: auto;
 }
 
+.pricetag {
+    color: white;
+
+}
+
 @media screen and (min-width: 481px) {
 
     .MOBILEpieName {
@@ -204,7 +209,7 @@ body {
 
     ul li {
         width: 45%;
-        height: 325px;
+        height: 345px;
         display: block;
         list-style: none;
         float: left;
