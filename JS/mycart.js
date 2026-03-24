@@ -4,10 +4,12 @@ var emailPrepend = "mailto:19kathys63@gmail.com?subject=New%20Pie%20Order&body="
 // This variable acts as a filter for the final order email that
 // exlcudes which items will have the word "pie" appended to it
 var exlcudePie = ["Caramel Corn"];
+exlcudePie.push("Banana Bread Cheesecake");
 // This map puts items with their respective prices.
 var priceMap = new Map();
     priceMap.set("pie", 40.0);
     priceMap.set("Caramel Corn", 20.0);
+    priceMap.set("Banana Bread Cheesecake", 40.0);
     priceMap.set("cookie", 1.5);
     priceMap.set("rolls", 35.0);
 // Cart variable is a list of all items
@@ -93,6 +95,8 @@ imgSources.set("Caramel Corn", "AlmondPecanCaramelCorn.jpg");
 imgSources.set("Blueberry Cheesecake", "BlueberryCkeesecakePie.jpg");
 imgSources.set("Macadamia Crust Key Lime", "MacadamiaCrustKeyLime.jpg");
 imgSources.set("Pumpkin Cheesecake", "PumpkinCheesecakePie.jpg");
+imgSources.set("Mint Milkshake", "MintMilkshakePie.jpg");
+imgSources.set("Banana Bread Cheesecake", "BananaBreadCheesecake.jpg");
 
 var unIdCount = 0;
 
